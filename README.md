@@ -29,3 +29,17 @@ AI agents and devs need cheap, instant contract-risk checks without signup. x402
 
 ## Status
 Live. Tunnel hostname is ephemeral and rotates on restart; the payTo address and pricing are stable.
+
+## Free tier (no payment)
+
+`GET /v1/preview?address=0x...` returns a truncated risk summary at no cost — use it to evaluate the data before paying.
+
+```
+curl "https://lows-immigration-expensive-friend.trycloudflare.com/v1/preview?address=0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770"
+```
+
+## Paid endpoint
+
+`GET /v1/scan?address=0x...` — 0.01 USDC on Base (x402 `exact` scheme), payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`.
+
+Live base URL: https://lows-immigration-expensive-friend.trycloudflare.com
