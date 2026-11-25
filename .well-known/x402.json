@@ -1,0 +1,27 @@
+{
+  "x402Version": 1,
+  "name": "x402-contract-scan",
+  "description": "On-chain contract risk scan API. Pay-per-request in USDC on Base.",
+  "freeTier": "https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan/free",
+  "resources": [
+    {
+      "resource": "https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan",
+      "type": "http",
+      "x402Version": 1,
+      "description": "GET /v1/scan?address=0x... returns a JSON risk summary for an EVM contract address.",
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
+          "maxAmountRequired": "10000",
+          "resource": "https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan",
+          "description": "Contract risk scan (0.01 USDC)",
+          "mimeType": "application/json",
+          "maxTimeoutSeconds": 60
+        }
+      ]
+    }
+  ]
+}
