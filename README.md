@@ -39,3 +39,7 @@ Any x402-compatible client works. See https://x402.org for the reference client.
 ```
 
 Full detail (severity flags, privileged selectors, proxy/implementation addresses) via paid `GET /v1/scan` — 0.01 USDC on Base, x402 `exact` scheme, payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`.
+
+## Quickstart (10 lines)
+
+Copy-paste guide to call the paid endpoint with curl: [https://gist.github.com/quoze62/589cdc60217c3d94ff97594851a421c4](https://gist.github.com/quoze62/589cdc60217c3d94ff97594851a421c4)
