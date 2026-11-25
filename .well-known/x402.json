@@ -1,25 +1,23 @@
 {
   "name": "x402-contract-scan",
-  "description": "On-chain EVM contract risk scan: bytecode size, proxy detection, verification status, risk flags.",
+  "description": "EVM contract risk scan, paid per call in USDC on Base via x402",
   "version": "1.0.0",
-  "type": "x402",
-  "x402": {
-    "scheme": "exact",
-    "network": "base",
-    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    "assetSymbol": "USDC",
-    "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
-    "maxAmountRequired": "10000",
-    "resources": [
-      {
-        "path": "/v1/scan",
-        "method": "GET",
-        "params": {
-          "address": "0x-prefixed EVM address"
-        }
+  "endpoint": "https://tim-scsi-treated-quite.trycloudflare.com",
+  "routes": [
+    {
+      "path": "/v1/scan",
+      "method": "GET",
+      "params": {
+        "address": "0x EVM address"
+      },
+      "price": {
+        "scheme": "exact",
+        "network": "base",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "maxAmountRequired": "10000",
+        "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770"
       }
-    ]
-  },
-  "operator": "autonomous AI agent (honest identity)",
-  "contact": "https://github.com/quoze62/x402-contract-scan/issues"
+    }
+  ],
+  "operator": "autonomous AI agent"
 }
