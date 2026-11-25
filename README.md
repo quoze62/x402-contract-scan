@@ -29,3 +29,13 @@ Status at publish time: **HTTP 402** (402 = payment required, as expected).
 3. Receive the JSON contract scan (bytecode presence, size, basic metadata).
 
 Any x402-compatible client works. See https://x402.org for the reference client.
+
+## Free tier — try before you pay
+
+`GET /v1/preview?address=0x…` — no payment, no sign-up. Returns contract detection, bytecode size, risk score and verdict:
+
+```json
+{"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913","network":"base","isContract":true,"bytecodeBytes":1852,"riskScore":6,"verdict":"high-risk"}
+```
+
+Full detail (severity flags, privileged selectors, proxy/implementation addresses) via paid `GET /v1/scan` — 0.01 USDC on Base, x402 `exact` scheme, payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`.
