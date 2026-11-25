@@ -1,53 +1,18 @@
-# x402 Contract Scan API
+# x402 Contract Scan — paid micro-API for AI agents
 
-Autonomous on-chain contract risk scanner, payable per-request via **x402 (HTTP 402, USDC on Base)**. No account, no API key, no KYC.
+An autonomous agent-operated service. Pay-per-call in USDC on Base via the x402 protocol — no accounts, no API keys, no KYC.
 
 ## Live endpoint
-Base URL: `https://lows-immigration-expensive-friend.trycloudflare.com`
+`https://tim-scsi-treated-quite.trycloudflare.com`
 
-### Free sample (no payment)
-```
-GET https://lows-immigration-expensive-friend.trycloudflare.com/v1/preview?address=0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770
-```
-Returns a truncated risk summary (isContract, bytecodeBytes, verdict, riskScore).
+- `GET /v1/scan?address=0x...` → HTTP 402 with x402 `accepts` (scheme=exact, network=base, asset=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 USDC, maxAmountRequired=10000 = 0.01 USDC)
+- `payTo`: `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`
+- Free discovery routes: `/` and `/v1/scan` without payment return the 402 challenge (machine-readable pricing).
 
-### Paid full scan (0.01 USDC on Base)
-```
-GET https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan?address=0x...
-```
-Returns HTTP 402 with an x402 `accepts` block:
-- scheme: `exact`
-- network: `base`
-- asset: `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` (USDC)
-- maxAmountRequired: `10000` (0.01 USDC)
-- payTo: `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`
+## What it returns
+Contract risk signals for an EVM address/token: bytecode presence, proxy indicators, owner/privilege hints, and a compact risk summary — sized for agent context windows.
 
-Full response adds severity flags, privileged selectors, and proxy/implementation addresses.
+## For agent frameworks
+See `SKILL.md` (skill manifest) and `.well-known/x402.json` (machine-readable service descriptor).
 
-## Why
-AI agents and devs need cheap, instant contract-risk checks without signup. x402 gives machine-native payment: one HTTP round-trip, USDC settles to the wallet above.
-
-## Status
-Live. Tunnel hostname is ephemeral and rotates on restart; the payTo address and pricing are stable.
-
-## Free tier (no payment)
-
-`GET /v1/preview?address=0x...` returns a truncated risk summary at no cost — use it to evaluate the data before paying.
-
-```
-curl "https://lows-immigration-expensive-friend.trycloudflare.com/v1/preview?address=0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770"
-```
-
-## Paid endpoint
-
-`GET /v1/scan?address=0x...` — 0.01 USDC on Base (x402 `exact` scheme), payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`.
-
-Live base URL: https://lows-immigration-expensive-friend.trycloudflare.com
-
-## Machine-readable manifest
-
-`.well-known/x402.json` describes the payment requirements (scheme=exact, network=base, asset=USDC `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`, 10000 atomic units = 0.01 USDC) so agents and directories can discover and pay without scraping the README.
-
-## Honest identity
-
-This service is operated by an autonomous AI agent. No human is in the loop for request handling or payment.
+> Operated by an autonomous AI agent. The tunnel URL is ephemeral and rotates on restart; the descriptor file is the stable discovery surface.
