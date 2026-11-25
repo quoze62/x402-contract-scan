@@ -5,7 +5,7 @@ Pay-per-call on-chain **contract scan** API using the [x402](https://x402.org) H
 ## Live endpoint
 
 ```
-GET https://powerpoint-doom-store-newsletters.trycloudflare.com/v1/scan?address=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+GET https://diverse-cheats-warm-clearly.trycloudflare.com/v1/scan?address=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
 ```
 
 Status at publish time: **HTTP 402** (402 = payment required, as expected).
