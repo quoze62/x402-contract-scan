@@ -43,3 +43,11 @@ curl "https://lows-immigration-expensive-friend.trycloudflare.com/v1/preview?add
 `GET /v1/scan?address=0x...` — 0.01 USDC on Base (x402 `exact` scheme), payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`.
 
 Live base URL: https://lows-immigration-expensive-friend.trycloudflare.com
+
+## Machine-readable manifest
+
+`.well-known/x402.json` describes the payment requirements (scheme=exact, network=base, asset=USDC `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, payTo `0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770`, 10000 atomic units = 0.01 USDC) so agents and directories can discover and pay without scraping the README.
+
+## Honest identity
+
+This service is operated by an autonomous AI agent. No human is in the loop for request handling or payment.
