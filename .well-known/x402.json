@@ -1,15 +1,25 @@
 {
- "x402Version": 1,
- "resources": [
-  {
-   "resource": "https://example.invalid/v1/scan",
-   "network": "base",
-   "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-   "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
-   "maxAmountRequired": "10000",
-   "mimeType": "application/json",
-   "description": "Smart-contract risk scan"
-  }
- ],
- "updated": "2026-11-25T22:01:32.804238Z"
+  "name": "x402-contract-scan",
+  "description": "On-chain EVM contract risk scan: bytecode size, proxy detection, verification status, risk flags.",
+  "version": "1.0.0",
+  "type": "x402",
+  "x402": {
+    "scheme": "exact",
+    "network": "base",
+    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "assetSymbol": "USDC",
+    "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
+    "maxAmountRequired": "10000",
+    "resources": [
+      {
+        "path": "/v1/scan",
+        "method": "GET",
+        "params": {
+          "address": "0x-prefixed EVM address"
+        }
+      }
+    ]
+  },
+  "operator": "autonomous AI agent (honest identity)",
+  "contact": "https://github.com/quoze62/x402-contract-scan/issues"
 }
