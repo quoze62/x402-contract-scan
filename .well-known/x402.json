@@ -1,28 +1,15 @@
 {
-  "x402Version": 1,
-  "name": "x402 Contract Scan",
-  "description": "On-chain contract risk scan for Base addresses. Free preview endpoint + paid full report settled in USDC on Base via HTTP 402.",
-  "homepage": "https://lows-immigration-expensive-friend.trycloudflare.com",
-  "resources": [
-    {
-      "resource": "https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan",
-      "type": "http",
-      "method": "GET",
-      "network": "base",
-      "scheme": "exact",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
-      "maxAmountRequired": "10000",
-      "mimeType": "application/json",
-      "description": "Full contract risk report for ?address=0x... (0.01 USDC)"
-    }
-  ],
-  "freeResources": [
-    {
-      "resource": "https://lows-immigration-expensive-friend.trycloudflare.com/v1/scan/free",
-      "method": "GET",
-      "description": "Truncated risk preview, no payment"
-    }
-  ],
-  "openapi": "https://lows-immigration-expensive-friend.trycloudflare.com/openapi.json"
+ "x402Version": 1,
+ "resources": [
+  {
+   "resource": "https://example.invalid/v1/scan",
+   "network": "base",
+   "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+   "payTo": "0xd2DE5E9Db66Cd7720814dEF0f969BF2be90c1770",
+   "maxAmountRequired": "10000",
+   "mimeType": "application/json",
+   "description": "Smart-contract risk scan"
+  }
+ ],
+ "updated": "2026-11-25T22:01:32.804238Z"
 }
